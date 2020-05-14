@@ -86,13 +86,13 @@ class NavigationTest(BaseCase):
         self.click('//*[@id="top-navigation-links"]/ul/li[1]/a')
         # выбираем Русский язык интерфейса
         self.click('//a[@title="Russian"]')
-        # выбираем регион США
-        self.click('//a[@title="USA"]')
+        # выбираем регион Россия
+        self.click('//a[@title="Россия"]')
         self.sleep(0.2)
         # переход в раздел товаров на русском
         self.get('https://ru.babyshop.com/dolce-gabbana/s/1495')
-        # получаем цены со страницы на русском языке и в регионе США
-        usa_price = self.get_text('//article[1]/a/div[2]/p[3]/span[2]')
-        # цены со страницы по умолчанию совпадают с ценами для региона США
-        self.assert_equal(home_price, usa_price)
+        # получаем цены со страницы на русском языке и в регионе Россия
+        rus_price = self.get_text('//article[1]/a/div[2]/p[3]/span[2]')
+        # цены со страницы по умолчанию совпадают с ценами для региона Россия
+        self.assert_equal(home_price, rus_price)
 
